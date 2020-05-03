@@ -1,0 +1,5 @@
+.list-wrap {
+    display: flex;
+    justify-content: space-evenly;
+}
+

@@ -1,0 +1,7 @@
+<div class="list">
+    <h3>{{listTitle}}</h3>
+    <div *ngFor="let item of cards">
+        <div class="card">{{item.title}}</div>
+    </div>
+    <button (click)="addCard()">Add card</button>
+  </div>
