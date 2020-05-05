@@ -1,10 +1,7 @@
 <div class="list-wrap">
-  <list
-    [cards]="cards"
-    [listTitle]="'TODO'"
-  ></list>  
-  <list
-    [cards]="cards"
-    [listTitle]="'Doing'"
-  ></list>  
+  <list *ngFor="let list of lists"
+    [cards]="list.cards"
+    [listTitle]="list.title"
+  ></list>
+  <add-list (notifyParentToAddList)="addList()"></add-list>
 </div>

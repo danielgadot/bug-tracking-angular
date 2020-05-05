@@ -1,7 +1,7 @@
 <div class="list">
-    <h3>{{listTitle}}</h3>
+    <input class="list-title" type="text" [(ngModel)]="listTitle" ngModelOptions="{standalone: true}">
     <div *ngFor="let item of cards">
-        <div class="card">{{item.title}}</div>
+        <div draggable="true" class="card">{{item.title}}</div>
     </div>
     <button (click)="addCard()">Add card</button>
-  </div>
+</div>

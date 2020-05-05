@@ -24,4 +24,8 @@ export class ListComponent implements OnInit {
     })
   }
 
+  dragCard(event) {
+    console.log('event :: ', event)
+  }
+
 }
