@@ -1,0 +1,24 @@
+.confirm-modal-wrap {
+  position: fixed;
+  background-color: #ffffff;
+  height: 150px;
+  width: 400px;
+  top: 100px;
+  right: 100px;
+  border-radius: 8px;
+}
+.msg-title {
+  font-size: 20px;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 62%;
+}
+.yes-btn {
+  color: red;
+}
+.no-btn {
+
+}

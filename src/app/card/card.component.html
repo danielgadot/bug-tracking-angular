@@ -1,0 +1,7 @@
+<div draggable="true" class="card">
+  <input [disabled]="!showActionsEdit" class="card-title" type="text" [(ngModel)]="card.cardTitle" ngModelOptions="{standalone: true}">
+  <img *ngIf="!showActionsEdit" (click)="editCardTitle()" src="assets/pencil.svg" alt="edit-btn-card-title">
+  <img *ngIf="!showActionsEdit" (click)="deleteCard()" src="assets/delete.svg" alt="edit-btn-card-title">
+  <img *ngIf="showActionsEdit" (click)="cancelEdit()" src="assets/clear.svg" alt="cancel-btn-card-title">
+  <img *ngIf="showActionsEdit" (click)="approveEdit()" src="assets/done.svg" alt="approve-btn-card-title">
+</div>

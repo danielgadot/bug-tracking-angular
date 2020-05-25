@@ -1,0 +1,22 @@
+.menu-icon:hover {
+   cursor: pointer;
+}
+.actions-wrap{
+  position: absolute;
+  background-color: #ffffff;
+  height: 50px;
+  width: 100px;
+  top: 32px;
+  right: -79px;
+  border-radius: 8px;
+}
+
+.actions-list {
+  list-style-type: none;
+  padding-left: 5px;
+}
+
+.actions-list li:hover {
+  color: #0079bf;
+  cursor: pointer;
+}

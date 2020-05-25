@@ -1,7 +1,19 @@
 <div class="list">
-    <input class="list-title" type="text" [(ngModel)]="listTitle" ngModelOptions="{standalone: true}">
-    <div *ngFor="let item of cards">
-        <div draggable="true" class="card">{{item.title}}</div>
+  <div>
+    <input class="list-title" type="text" [(ngModel)]="listName" ngModelOptions="{standalone: true}">
+    <list-actions
+      [listName]="listName"
+    ></list-actions>
+  </div>
+  <div >
+    <div class="cdk-drag-animating" cdkDrag [cdkDragData]="card" *ngFor="let card of list">
+      <card
+        [card]="card"
+        (deleteCardEvent)="deleteCard(card)"
+        [listName]="listName"
+      ></card>
     </div>
+  </div>
     <button (click)="addCard()">Add card</button>
 </div>
+

@@ -1,0 +1,38 @@
+<div *ngIf="auth.user$ | async as user; else login">
+<div class="list-wrap" cdkDropListGroup >
+  <list
+    cdkDropList
+    *ngFor="let list of lists | keyvalue"
+    [cdkDropListData]="list.key"
+    (cdkDropListDropped)="drop($event)"
+    [list]="list.value"
+    [listName]="list.key"
+    (newCardEvent)="addCard($event)"
+  ></list>
+  <add-list (notifyParentToAddList)="addList()"></add-list>
+</div>
+
+  <pre>
+
+    {{ user | json}}
+  </pre>
+  <hr>
+  <button (click)="auth.signOut()">Sign out</button>
+
+</div>
+
+<ng-template #login >
+  <div class="entry-wrap">
+
+    <div>
+      <h3>sign in </h3>
+      <button (click)="auth.googleSignin()" >Login with Google</button>
+
+    </div>
+    <div>
+      <h3>Sign In with Email</h3>
+      <button (click)="auth.emailSignin('testuser@example.com', '123456')" >Login with Email</button>
+
+    </div>
+  </div>
+</ng-template>

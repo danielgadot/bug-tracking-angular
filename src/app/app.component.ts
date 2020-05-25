@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ListServiceService } from './services/list-service.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,15 +8,11 @@ import { ListServiceService } from './services/list-service.service';
 })
 export class AppComponent {
 
-  lists: any[];
 
-  constructor(private listServiceService: ListServiceService) {
-    this.lists = this.listServiceService.getLists();
+
+  constructor() {
+
   }
-  addList() {
-    console.log('add list parent');
-    const newListName = prompt(' enter new list name');
-    this.lists = this.listServiceService.postNewService(newListName);
-  }
+
 
 }

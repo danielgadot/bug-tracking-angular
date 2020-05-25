@@ -1,0 +1,13 @@
+<img class="menu-icon" (click)="toggleMenu()" src="assets/more.svg" alt="">
+<div *ngIf="showMenu" class="actions-wrap">
+  <ul class="actions-list">
+    <li (click)="deleteList()">Delete List</li>
+  </ul>
+</div>
+
+<confirm-modal
+  *ngIf="showConfirmModal"
+  [message]="'Are You Sure U Want to delete this list?'"
+  (noEventClicked)="confirmNoClicked()"
+  (confirmYesClicked)="confirmYesClicked()"
+></confirm-modal>

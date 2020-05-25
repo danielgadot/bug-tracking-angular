@@ -1,0 +1,15 @@
+user : {
+  id: 1,
+  name: 'daniel'
+  lists: [
+    {
+      listName: 'TODO',
+      items: [
+        {
+          title: 'first item',
+          dateCreated: '11/1/2001'
+        }
+      ]
+    }
+  ]
+}
