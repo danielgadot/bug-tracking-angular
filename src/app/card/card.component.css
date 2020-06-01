@@ -1,6 +1,9 @@
 .card-title {
   border: 0;
 }
+.card-title:hover {
+  cursor: pointer;
+}
 .card {
   background-color: #fff;
   border-radius: 3px;

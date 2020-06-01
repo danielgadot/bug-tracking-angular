@@ -4,6 +4,7 @@ import {AuthService} from '../auth/auth.service';
 import User from '../../models/user';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {BaseService} from '../base.service';
+import {AngularFireAuth} from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class CardService extends BaseService {
   user: User;
   unsub$ = new Subject<void>();
 
-  constructor(public auth: AuthService, private afs: AngularFirestore) {
-    super(auth);
+  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore) {
+    super(afAuth, afs);
   }
 
   updateCardTitle(oldTitle, newTitle, listName) {

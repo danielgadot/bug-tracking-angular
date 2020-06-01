@@ -22,16 +22,18 @@
 </div>
 
 <ng-template #login >
+  <h1>Trello</h1>
+  <h2>This is an app like <a href="https://trello.com/">Trello</a> for Demonstration purposes</h2>
   <div class="entry-wrap">
 
     <div>
-      <h3>sign in </h3>
-      <button (click)="auth.googleSignin()" >Login with Google</button>
+      <h3 class="btn-title">sign in </h3>
+      <button class="google-signin-btn mr-r-15" (click)="auth.googleSignin()" >Login with Google <img class="google-icon" src="assets/google-icon.svg" alt="google-btn"></button>
 
     </div>
     <div>
-      <h3>Sign In with Email</h3>
-      <button (click)="auth.emailSignin('testuser@example.com', '123456')" >Login with Email</button>
+      <h3 class="btn-title">Try It</h3>
+      <button class="try-it-btn" (click)="auth.emailSignin('testuser@example.com', '123456')" >Login with Email</button>
 
     </div>
   </div>

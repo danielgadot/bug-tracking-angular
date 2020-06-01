@@ -1,5 +1,10 @@
 {
   "projects": {
     "default": "trello-f52e0"
+  },
+  "targets": {
+    "trello-f52e0": {
+      "hosting": "trello-f52e0.web.app"
+    }
   }
 }

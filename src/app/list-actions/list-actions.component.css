@@ -9,6 +9,7 @@
   top: 32px;
   right: -79px;
   border-radius: 8px;
+  z-index: 1;
 }
 
 .actions-list {

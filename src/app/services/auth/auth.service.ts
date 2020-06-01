@@ -6,26 +6,18 @@ import {Observable, of, Subject} from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import User from '../../models/user';
+import {BaseService} from '../base.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService extends BaseService {
 
   user$: Observable<User>;
   unsub$ = new Subject<void>();
 
   constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore, private router: Router) {
-    this.user$ = this.afAuth.authState.pipe(
-      switchMap(user => {
-        console.log('user auth state', user);
-        if (user) {
-          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
-        } else {
-          return of(null);
-        }
-      })
-    );
+    super(afAuth, afs);
   }
 
   async googleSignin() {
