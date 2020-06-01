@@ -14,9 +14,8 @@ export class CardComponent implements OnInit {
 
   @Input() card: Card;
   @Input() listName: string;
-  @Output() deleteCardEvent = new EventEmitter<any>();
   titlePlaceHolder: string;
-  constructor(private cardService: CardService, private afs: AngularFirestore) { }
+  constructor(private cardService: CardService) { }
 
   ngOnInit(): void {
   }
@@ -33,11 +32,10 @@ export class CardComponent implements OnInit {
   approveEdit() {
     this.showActionsEdit = false;
     this.cardService.updateCardTitle(this.titlePlaceHolder, this.card.cardTitle, this.listName);
-    // this.afs
-    // this.cardService.cardName$.next('someval');
   }
   deleteCard() {
-    this.deleteCardEvent.emit(this.card.cardTitle);
+    console.log('deleting card');
+    this.cardService.deleteCard(this.card.cardTitle, this.listName);
   }
 
 }

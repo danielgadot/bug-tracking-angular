@@ -25,4 +25,11 @@ export class CardService extends BaseService {
       lists: this.user.lists
     }, { merge: true });
   }
+
+  deleteCard(card, listName) {
+    this.user.lists[listName] = this.user.lists[listName].filter(cardObj => cardObj.cardTitle !== card);
+    this.afs.doc(`users/${this.user.uid}`).set({
+      lists: this.user.lists
+    }, { merge: true });
+  }
 }

@@ -9,7 +9,6 @@
     <div class="cdk-drag-animating" cdkDrag [cdkDragData]="card" *ngFor="let card of list">
       <card
         [card]="card"
-        (deleteCardEvent)="deleteCard(card)"
         [listName]="listName"
       ></card>
     </div>

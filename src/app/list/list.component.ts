@@ -38,12 +38,4 @@ export class ListComponent implements OnInit {
     const newCardTitle = prompt('card title');
     this.newCardEvent.emit({ cardTitle: newCardTitle, listName: this.listName});
   }
-
-  deleteCard(card) {
-    this.user.lists[this.listName] = this.user.lists[this.listName].filter(cardObj => cardObj.cardTitle !== card.cardTitle);
-    this.afs.doc(`users/${this.user.uid}`).set({
-      lists: this.user.lists
-    }, { merge: true });
-  }
-
 }
