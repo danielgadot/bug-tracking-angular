@@ -1,28 +1,28 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, ViewChild, QueryList, ElementRef} from '@angular/core';
 import Card from '../models/card';
-import { CardService } from '../services/card/card.service';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { BoardService } from '../services/board/board.service';
 
 @Component({
   selector: 'card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
 
-  showActionsEdit = false; // move to card component
+  showActionsEdit = false;
 
   @Input() card: Card;
   @Input() listName: string;
   titlePlaceHolder: string;
-  constructor(private cardService: CardService) { }
+  @ViewChild('txtArea') textArea: ElementRef;
 
-  ngOnInit(): void {
-  }
+  constructor(private boardService: BoardService) { }
 
   editCardTitle() {
     this.showActionsEdit = true;
     this.titlePlaceHolder = this.card.cardTitle;
+    console.log('%c this.textArea', 'color: red', this.textArea)
+    this.textArea.nativeElement.focus();
   }
   cancelEdit() {
     this.showActionsEdit = false;
@@ -31,11 +31,10 @@ export class CardComponent implements OnInit {
   }
   approveEdit() {
     this.showActionsEdit = false;
-    this.cardService.updateCardTitle(this.titlePlaceHolder, this.card.cardTitle, this.listName);
+    this.boardService.updateCardTitle(this.titlePlaceHolder, this.card.cardTitle, this.listName);
   }
   deleteCard() {
-    console.log('deleting card');
-    this.cardService.deleteCard(this.card.cardTitle, this.listName);
+    this.boardService.deleteCard(this.card.cardTitle, this.listName);
   }
 
 }

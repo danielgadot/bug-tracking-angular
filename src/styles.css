@@ -1,7 +1,16 @@
+@font-face {
+  font-family: Petrona-Regular;
+  src: url('./assets/Petrona-Regular.ttf');
+
+}
+
 body {
     background-color: rgb(0, 121, 191);
 }
 
 .mr-r-15 {
   margin-right: 15px;
+}
+.color-w {
+  color: #ffffff;
 }

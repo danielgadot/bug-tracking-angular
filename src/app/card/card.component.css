@@ -1,5 +1,10 @@
 .card-title {
   border: 0;
+  background-color: white;
+  resize: none;
+  word-break: break-word;
+  overflow-wrap: normal;
+  width: 97%;
 }
 .card-title:hover {
   cursor: pointer;
@@ -16,4 +21,15 @@
   position: relative;
   text-decoration: none;
   z-index: 0;
+}
+.card-actions-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-mode {
+  border: 1px solid black;
+}
+.edit-mode:focus {
+  outline: none;
 }

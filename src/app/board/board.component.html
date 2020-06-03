@@ -1,0 +1,17 @@
+<div class="list-wrap" cdkDropListGroup >
+  <list
+    cdkDropList
+    *ngFor="let list of user.lists | keyvalue"
+    [cdkDropListData]="list.key"
+    (cdkDropListDropped)="drop($event)"
+    [list]="list.value"
+    [listName]="list.key"
+  ></list>
+  <add-list (notifyParentToAddList)="addList()"></add-list>
+</div>
+
+<!--<pre>-->
+
+<!--    {{ user | json}}-->s
+<!--  </pre>-->
+<!--<hr>-->

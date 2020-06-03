@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   height: 90vh;
-  align-items: center;
 }
 /* Animate items as they're being sorted. */
 .cdk-drop-list-dragging .cdk-drag {
@@ -40,4 +39,19 @@
 }
 .btn-title {
   text-align: center;
+}
+.navbar-actions{
+  display: flex;
+  justify-content: flex-end;
+}
+.signout-btn {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #0079bf;
+  border: 2px solid #E2E4E6;
+  color: #ffffff;
+  font-size: 18px;
+}
+.signout-btn:hover {
+  cursor: pointer;
 }

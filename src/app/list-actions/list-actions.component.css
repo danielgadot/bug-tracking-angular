@@ -5,11 +5,12 @@
   position: absolute;
   background-color: #ffffff;
   height: 50px;
-  width: 100px;
+  width: 150px;
   top: 32px;
-  right: -79px;
+  right: -130px;
   border-radius: 8px;
   z-index: 1;
+  border: 1px solid #CDD2D4;
 }
 
 .actions-list {

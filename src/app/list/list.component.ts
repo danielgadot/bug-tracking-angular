@@ -5,7 +5,9 @@ import User from '../models/user';
 import {tap} from 'rxjs/operators';
 import {AuthService} from '../services/auth/auth.service';
 import List from '../models/list';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { BoardService } from '../services/board/board.service';
+
+'./services/list/list.service'
 
 @Component({
   selector: 'list',
@@ -19,16 +21,8 @@ export class ListComponent implements OnInit {
 
   @Input() list: Card[];
   @Input() listName: string;
-  @Output() newCardEvent = new EventEmitter<any>();
 
-  constructor(public auth: AuthService, private afs: AngularFirestore) {
-    this.auth.user$.pipe(
-
-      tap(user => {
-        this.user = user;
-        console.log('list comp ', this.list);
-      })
-    ).subscribe();
+  constructor(public auth: AuthService, private afs: AngularFirestore, private listService: BoardService) {
   }
 
   ngOnInit(): void {
@@ -36,6 +30,6 @@ export class ListComponent implements OnInit {
 
   addCard() {
     const newCardTitle = prompt('card title');
-    this.newCardEvent.emit({ cardTitle: newCardTitle, listName: this.listName});
+    this.listService.addCard({ cardTitle: newCardTitle, listName: this.listName});
   }
 }

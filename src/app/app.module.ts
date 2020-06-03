@@ -15,6 +15,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ListActionsComponent } from './list-actions/list-actions.component';
 import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
+import { BoardComponent } from './board/board.component';
 
 const routes: Routes = [];
 
@@ -26,7 +27,8 @@ const routes: Routes = [];
     CardComponent,
     HomepageComponent,
     ListActionsComponent,
-    ConfirmModalComponent
+    ConfirmModalComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,

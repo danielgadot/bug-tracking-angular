@@ -1,29 +1,16 @@
 <div *ngIf="auth.user$ | async as user; else login">
-<div class="list-wrap" cdkDropListGroup >
-  <list
-    cdkDropList
-    *ngFor="let list of lists | keyvalue"
-    [cdkDropListData]="list.key"
-    (cdkDropListDropped)="drop($event)"
-    [list]="list.value"
-    [listName]="list.key"
-    (newCardEvent)="addCard($event)"
-  ></list>
-  <add-list (notifyParentToAddList)="addList()"></add-list>
-</div>
+  <div class="navbar-actions">
+    <button class="signout-btn" (click)="auth.signOut()">Sign out</button>
+  </div>
 
-  <pre>
-
-    {{ user | json}}
-  </pre>
-  <hr>
-  <button (click)="auth.signOut()">Sign out</button>
-
+  <board
+    [user]="user"
+  ></board>
 </div>
 
 <ng-template #login >
-  <h1>Trello</h1>
-  <h2>This is an app like <a href="https://trello.com/">Trello</a> for Demonstration purposes</h2>
+  <h1 class="color-w">Trello</h1>
+  <h2 class="color-w">This is an app like <a class="color-w" href="https://trello.com/">Trello</a> for Demonstration purposes</h2>
   <div class="entry-wrap">
 
     <div>
@@ -33,7 +20,7 @@
     </div>
     <div>
       <h3 class="btn-title">Try It</h3>
-      <button class="try-it-btn" (click)="auth.emailSignin('testuser@example.com', '123456')" >Login with Email</button>
+      <button class="try-it-btn" (click)="auth.emailSignin('testuser@example.com', '123456')" >Try it</button>
 
     </div>
   </div>

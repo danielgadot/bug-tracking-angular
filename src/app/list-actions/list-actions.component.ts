@@ -1,5 +1,5 @@
 import {Component, HostListener, OnInit, ElementRef, Input} from '@angular/core';
-import {ListService} from '../services/list/list.service';
+import {BoardService} from '../services/board/board.service';
 
 @Component({
   selector: 'list-actions',
@@ -12,7 +12,7 @@ export class ListActionsComponent implements OnInit {
   showConfirmModal = false;
 
   @Input() listName;
-  constructor(private eRef: ElementRef, public listService: ListService) { }
+  constructor(private eRef: ElementRef, public boardService: BoardService) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +32,7 @@ export class ListActionsComponent implements OnInit {
 
   deleteList() {
     this.showConfirmModal = true;
+    this.showMenu = false;
   }
 
   confirmNoClicked() {
@@ -40,6 +41,6 @@ export class ListActionsComponent implements OnInit {
 
   confirmYesClicked() {
     this.showConfirmModal = false;
-    this.listService.deleteList(this.listName);
+    this.boardService.deleteList(this.listName);
   }
 }

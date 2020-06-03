@@ -9,6 +9,7 @@
     white-space: normal;
     padding: 10px;
     width: 250px;
+    margin-right: 40px;
 }
 
 .card {
@@ -26,10 +27,11 @@
 }
 
 .list-title {
+    font-family: Petrona-Regular;
     background-color: #ebecf0;
     border: 0;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 23px;
     margin-bottom: 15px;
     width: 200px;
 }
