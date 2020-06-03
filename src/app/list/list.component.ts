@@ -30,6 +30,8 @@ export class ListComponent implements OnInit {
 
   addCard() {
     const newCardTitle = prompt('card title');
-    this.listService.addCard({ cardTitle: newCardTitle, listName: this.listName});
+    if (newCardTitle && newCardTitle !== ''){
+      this.listService.addCard({ cardTitle: newCardTitle, listName: this.listName});
+    }
   }
 }

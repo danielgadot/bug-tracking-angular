@@ -34,6 +34,10 @@
   margin-right: 10px;
 }
 .no-btn {
-  border: 2px solid red;
-  color: red;
+  border: 2px solid #86150d;
+  color: #86150d;
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
