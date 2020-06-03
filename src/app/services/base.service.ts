@@ -19,7 +19,6 @@ export class BaseService {
   constructor( afAuth: AngularFireAuth,  afs: AngularFirestore) {
     this.user$ = afAuth.authState.pipe(
       switchMap(user => {
-        console.log('user constructor pipe', user);
         if (user) {
           this.user = user;
           return afs.doc<User>(`users/${user.uid}`).valueChanges();
@@ -35,7 +34,6 @@ export class BaseService {
     return pipe(
       () => this.user$,
       tap(user => {
-        console.log('streamGetUser ', user);
         this.user = user;
       }),
     )(null);

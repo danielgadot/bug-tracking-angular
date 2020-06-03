@@ -23,7 +23,6 @@ export class AuthService extends BaseService {
   async googleSignin() {
     const provider = new auth.GoogleAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
-    console.log(credential);
     return this.updateUserData(credential.user);
   }
 

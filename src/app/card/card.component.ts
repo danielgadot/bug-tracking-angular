@@ -21,7 +21,6 @@ export class CardComponent {
   editCardTitle() {
     this.showActionsEdit = true;
     this.titlePlaceHolder = this.card.cardTitle;
-    console.log('%c this.textArea', 'color: red', this.textArea)
     this.textArea.nativeElement.focus();
   }
   cancelEdit() {
