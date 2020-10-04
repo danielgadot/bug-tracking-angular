@@ -25,6 +25,8 @@ export class BoardService extends BaseService{
   }
 
   addCard({ cardTitle, listName }) {
+    console.log('%c this.user :: ', 'color: red;font-size:16px', this.user);
+
     this.user.lists[listName].push({ cardTitle });
     this.updateLists();
   }
