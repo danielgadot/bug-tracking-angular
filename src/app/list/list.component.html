@@ -1,6 +1,6 @@
 <div class="list">
   <div>
-    <input class="list-title" type="text" [(ngModel)]="listName" ngModelOptions="{standalone: true}">
+    <input class="list-title" type="text" [(ngModel)]="listName" (change)="listNameChange()" ngModelOptions="{standalone: true}">
     <list-actions
       [listName]="listName"
     ></list-actions>

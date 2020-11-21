@@ -21,17 +21,26 @@ export class ListComponent implements OnInit {
 
   @Input() list: Card[];
   @Input() listName: string;
+  listNameCache: string = this.listName;
 
-  constructor(public auth: AuthService, private afs: AngularFirestore, private listService: BoardService) {
+  constructor(public auth: AuthService, private afs: AngularFirestore, private boardService: BoardService) {
   }
 
   ngOnInit(): void {
+    this.listNameCache = this.listName;
   }
 
   addCard() {
     const newCardTitle = prompt('card title');
     if (newCardTitle && newCardTitle !== ''){
-      this.listService.addCard({ cardTitle: newCardTitle, listName: this.listName});
+      this.boardService.addCard({ cardTitle: newCardTitle, listName: this.listName});
     }
+  }
+
+  listNameChange() {
+    if (!this.listNameCache) {
+      this.listNameCache = this.listName;
+    }
+    this.boardService.updateListName(this.listNameCache, this.listName);
   }
 }

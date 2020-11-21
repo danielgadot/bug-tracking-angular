@@ -62,4 +62,9 @@ export class BoardService extends BaseService{
       this.updateLists();
     }
   }
+
+  updateListName(oldListName, newListName) {
+    this.user.lists[newListName] = this.user.lists[oldListName];
+    this.deleteList(oldListName);
+  }
 }

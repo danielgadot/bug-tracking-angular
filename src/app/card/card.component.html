@@ -1,9 +1,20 @@
-<div  class="card">
+<div [ngClass]="{'card': true,
+ 'status-green': card.status === 'done',
+ 'status-white': card.status === 'todo'}">
   <div class="card-actions-wrap">
+    <span (click)="card.status = 'todo'">⬜</span>
+    <span (click)="card.status = 'done'">🟩</span>
     <img *ngIf="!showActionsEdit" (click)="editCardTitle();" src="assets/pencil.svg" alt="edit-btn-card-title">
     <img *ngIf="!showActionsEdit" (click)="deleteCard()" src="assets/delete.svg" alt="edit-btn-card-title">
     <img *ngIf="showActionsEdit" (click)="cancelEdit()" src="assets/clear.svg" alt="cancel-btn-card-title">
     <img *ngIf="showActionsEdit" (click)="approveEdit()" src="assets/done.svg" alt="approve-btn-card-title">
   </div>
-  <textarea #txtArea [ngClass]="{'edit-mode': showActionsEdit}" cols="30" rows="1" [disabled]="!showActionsEdit" class="card-title" type="text" [(ngModel)]="card.cardTitle" ngModelOptions="{standalone: true}" ></textarea>
+  <textarea
+    [ngClass]="{
+       'text-area': true,
+       'card-title': true,
+       'edit-mode': showActionsEdit,
+       'status-green': card.status === 'done',
+       'status-white': card.status === 'todo'}"
+    #txtArea cols="30" rows="1" [disabled]="!showActionsEdit" class="" type="text" [(ngModel)]="card.cardTitle" ngModelOptions="{standalone: true}" ></textarea>
 </div>

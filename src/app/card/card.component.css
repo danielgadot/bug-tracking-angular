@@ -17,7 +17,7 @@
   display: block;
   margin-bottom: 8px;
   max-width: 300px;
-  min-height: 20px;
+  min-height: 100px;
   position: relative;
   text-decoration: none;
   z-index: 0;
@@ -36,4 +36,14 @@
 }
 .edit-mode:focus {
   outline: none;
+}
+.status-green {
+  background-color: #43c243ba;
+}
+.status-white {
+  background-color: inherit;
+}
+.text-area {
+  font-size: 16px;
+  height: 100px;
 }
