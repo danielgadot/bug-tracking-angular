@@ -1,0 +1,13 @@
+<h1>Calendar</h1>
+  <ul style="display: flex;justify-content: space-between" >
+    <ul *ngFor="let day of days">
+      <li>{{day.name}}</li>
+      <li *ngFor="let task of day.tasks">{{task}}</li>
+    </ul>
+  </ul>
+
+<style>
+  ul {
+    list-style-type: none;
+  }
+</style>

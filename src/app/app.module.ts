@@ -16,6 +16,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ListActionsComponent } from './list-actions/list-actions.component';
 import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
 import { BoardComponent } from './board/board.component';
+import { CalendarModule } from './modules/calendar/calendar.module';
 
 const routes: Routes = [];
 
@@ -38,7 +39,8 @@ const routes: Routes = [];
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
-    DragDropModule
+    DragDropModule,
+    CalendarModule
   ],
   exports: [RouterModule],
   providers: [],
